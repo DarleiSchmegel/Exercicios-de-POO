@@ -1,34 +1,55 @@
 
 package projetodascanetas;
 import java.util.Scanner;
-
+import java.util.Arrays;
 public class ProjetoDasCanetas {
 
     public static void main(String[] args) {
         // TODO code application logic here);
         Scanner sc = new Scanner(System.in);
         
-        System.out.println("Digite quantas canetas vc dezeja add ao seu vetor!");
-        System.out.print("Quantidade: ");
-        int quantidade;
+        System.out.println("Digite o tamanho máximo do vetor de canetas!");
+        System.out.print("Max: ");
+        int max;
         
-        quantidade = sc.nextInt();
+        max = sc.nextInt();
         
-        Lista canetas = new Lista(quantidade);
+        Lista canetas = new Lista(max);        
         
-        
-        System.out.println("Agora que vc definiu o tamanho máximo do vetor vc ja pode add canetas no seu vetor");
         String cor;
-        int op = 1;
+        int op;
         do{
-            sc.nextLine();
-            cor = sc.nextLine(); 
-            canetas.addCaneta(cor);
-            
-            System.out.print("Digite != de 0 para add mais uma caneta: ");
+            System.out.printf("Digite!%n"
+                    + "1 adcionar caneta.%n"
+                    + "2 para selecionar uma caneta do vetor.%n"
+                    + "3 para ordenar vetor.%n"
+                    + "4 para imprimir vetor.%n"
+                    + "5 para enserrar programa.%n");
             op = sc.nextInt();
-        }while(op != 0);
-        canetas.imprimir();
+            switch(op){
+                case 1://adcionar caneta
+                    sc.nextLine();
+                    cor = sc.nextLine(); 
+                    canetas.addCaneta(cor);
+                break;
+                case 2://para selecionar uma caneta do vetor
+                    int pos;
+                    System.out.print("Digite Posição de retorno: ");
+                    pos = sc.nextInt();
+                    
+                    System.err.println("#"+ pos + ": " + canetas.retornaItem(pos));
+                break;
+                case 3://para ordenar vetor
+                    canetas.ordenar();
+                break;
+                case 4://para imprimir vetor
+                    canetas.imprimir();
+                break;
+                default:
+                    System.out.println("Este não é um dia válido!");                    
+            }           
+        }while(op != 5);
+        
         
         sc.close();
     }
