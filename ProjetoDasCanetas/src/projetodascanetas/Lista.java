@@ -4,7 +4,7 @@ package projetodascanetas;
 public class Lista {
     
     private Caneta[] colecao;
-    private int numeroDeCanetas;
+    private int numeroDeCanetas;//trabalhando com git
     
     public Lista(int tamanho){
         colecao = new Caneta[tamanho];
