@@ -40,7 +40,7 @@ public class ProjetoDasCanetas {
                     System.err.println("#"+ pos + ": " + canetas.retornaItem(pos));
                 break;
                 case 3://para ordenar vetor
-                    canetas.ordenar();
+                    canetas.ordenar();//O vetor só será ordenado caso todas as posições dele estiverem ocupadas
                 break;
                 case 4://para imprimir vetor
                     canetas.imprimir();

@@ -1,8 +1,8 @@
 
 package projetodascanetas;
 
-public class Caneta {
-    private String cor;
+public class Caneta implements Comparable<Caneta>{
+    private String cor; 
     
     public Caneta (String cor){
         this.cor = cor;
@@ -14,10 +14,21 @@ public class Caneta {
 
     public void setCor(String cor) {
         this.cor = cor;
-    }
-    public String toString(){
+    }   
+
+    @Override
+    public String toString() {
         return cor;
     }
     
     
+    /**
+     *
+     * @param t
+     * @return
+     */
+    @Override
+    public int compareTo(Caneta t) {
+        return this.cor.compareTo(t.getCor());
+    }
 }

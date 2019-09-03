@@ -2,14 +2,16 @@
 package projetodascanetas;
 
 import java.util.Arrays;
-import java.util.Collections;
-
 
 public class Lista {
     
-    private Caneta[] colecao;
+    private final Caneta[] colecao;
     private int numeroDeCanetas;    
     
+    /**
+     *
+     * @param tamanho
+     */
     public Lista(int tamanho){
         colecao = new Caneta[tamanho];
         numeroDeCanetas = 0;
@@ -28,7 +30,7 @@ public class Lista {
             this.numeroDeCanetas += 1;
         }
         else{
-            System.out.println("ERRO!!! /nO Vetor de canetas está cheio!");
+            System.out.print("ERRO!!! /nO Vetor de canetas está cheio!");
         }
     }
     /*retornaItem Recebe como parâmetro uma posição do vetor e retorna a caneta que estiver naquela posição;
@@ -44,7 +46,7 @@ public class Lista {
             System.out.println(
                     "Caneta[" +
                     i + 
-                    "]: " + colecao[i].getCor()                            
+                    "]: " + colecao[i]                            
              );
         }
     }
@@ -53,17 +55,8 @@ public class Lista {
     */
     public void ordenar(){
        
-        Arrays.sort(colecao);
-        /*Caneta aux;
-        for (int i = 0; i < colecao.length; i++) {
-            for (int j = i+1; j < colecao.length; j++) {
-                if(colecao[i]. ){
-                   aux = colecao[i];
-                   colecao[i] = colecao[j];
-                   colecao[j] = aux;
-                }
-            }
-        }*/
+        Arrays.sort(colecao);//Só funciona caso todas as posições do vetor estiverem ocupados
+        
     }
     
 }
